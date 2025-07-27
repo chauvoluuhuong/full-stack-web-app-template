@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NestJS Static Files</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .status {
+      background: #e8f5e8;
+      border: 1px solid #4caf50;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+
+    .api-link {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin: 10px 5px;
+    }
+
+    .api-link:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎉 NestJS Static Files Working!</h1>
+
+    <div class="status">
+      <strong>✅ Success:</strong> This HTML file is being served from the static folder.
+    </div>
+
+    <h2>Available API Endpoints:</h2>
+    <p>Your NestJS application is running and serving static files. You can also access the API endpoints:</p>
+
+    <a href="/api" class="api-link">API Root</a>
+    <a href="/users" class="api-link">Users API</a>
+    <a href="/health" class="api-link">Health Check</a>
+
+    <h2>Static File Examples:</h2>
+    <p>You can place any static files in the <code>public</code> folder and they will be served:</p>
+    <ul>
+      <li>HTML files</li>
+      <li>CSS files</li>
+      <li>JavaScript files</li>
+      <li>Images</li>
+      <li>Documents</li>
+    </ul>
+
+    <p><em>This file is located at: <code>public/index.html</code></em></p>
+  </div>
+</body>
+
+</html>

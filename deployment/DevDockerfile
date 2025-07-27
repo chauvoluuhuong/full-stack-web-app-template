@@ -1,0 +1,25 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy source code
+COPY . .
+
+# Build typescript-utils-lib and link it
+RUN cd typescript-utils-lib && npm install && npm run build && npm link \
+    && cd ../app && npm install && npm link typescript-utils-package
+
+# Build frontend React app
+RUN cd frontend && npm install && npm run build
+
+# Clear app public directory and copy built frontend files
+RUN rm -rf app/public/* && cp -r frontend/build/* app/public/
+
+# Build the application
+RUN cd app && npm run build
+
+# Expose port
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "run", "start:dev", "--prefix", "app"] 
